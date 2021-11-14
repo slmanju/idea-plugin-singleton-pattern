@@ -1,0 +1,25 @@
+<idea-plugin>
+  <id>com.slmanju.singletonpattern</id>
+  <name>Java Singleton Pattern</name>
+  <vendor url="https://github.com/slmanju/idea-plugin-singleton-pattern">Manjula Jayawardana</vendor>
+
+  <description>
+    <![CDATA[
+      This plugin generates singleton pattern.
+    ]]>
+  </description>
+
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceImplementation="com.slmanju.singletonpattern.SingletonPatternAction"/>
+  </extensions>
+
+  <actions>
+    <group id="singleton-group" text="Singleton Pattern">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <separator/>
+      <action id="singleton-group.singleton" text="Generate Singleton" class="com.slmanju.singletonpattern.SingletonPatternAction"/>
+    </group>
+  </actions>
+</idea-plugin>
